@@ -1,0 +1,44 @@
+*{
+  box-sizing: border-box;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+
+#buttons {
+display:inline-block;
+float: left;
+position: absolute;
+width: 300px;
+height: 200px;
+top: 50%;
+margin-bottom: -75px;
+left: 50%;
+margin-left: -150px;
+text-align: center;
+
+
+}
+#exercise2 {
+  display:block;
+  position: absolute;
+  width: 500px;
+  height: 210px;
+  top: 75%;
+  font-size: 30px;
+  left: 50%;
+  margin-left: -250px;
+}
+
+
+.formsubmit {
+  display: block;
+  position:absolute;
+  width: 341.5px;
+  left: 50%;
+  margin-left: -170.75px;
+  top: 80%;
+  }
