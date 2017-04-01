@@ -58,7 +58,7 @@ var enterEmail = document.getElementById("inputemail");
 var enterPassword = document.getElementById("inputpassword");
 var form = document.getElementById("form");
 
-function checkPassword(event) {
+function checkPassword() {
 	if (enterPassword.value === "123456768") {
 		return true;
 	}
@@ -67,7 +67,7 @@ function checkPassword(event) {
 }
 }
 
-function checkUsername(event) {
+function checkUsername() {
 	if (enterUsername.value === ([/0-9/])) {
 		return true;
 	}
@@ -76,11 +76,7 @@ function checkUsername(event) {
 	}
 }
 
-form.addEventListener("submit",checkPassword);
-form.addEventListener("submit", checkUsername);
-
-
-function checkForm() {
+function checkForm(event) {
 	if ((checkUsername() && checkPassword()) === true) {
 		return true;
 	}
@@ -88,3 +84,5 @@ function checkForm() {
 		alert("Incorrect Entry");
 	}
 }
+
+form.addEventListener("submit", checkForm);
