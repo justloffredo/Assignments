@@ -1,0 +1,137 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+	}
+
+	body {
+		background: url("./images/pageBG.jpg") center center fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+
+	}
+
+	.jukebox {
+		background-color: rgba(0, 0, 0, 0.5);
+		border: solid 2px #FFF;
+		position: relative;
+		display: block;
+		width: 375px;
+		height: 550px;
+		top: 10%;
+		left: 50%;
+		margin-left: -187.5px;
+		margin-bottom: auto;
+
+
+
+	}
+
+	.jukebox-image {
+		background: url("./images/musicplayer-2.jpg");
+		width: 100%;
+		height: 30%;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+	}
+
+	.jukebox-controls {
+		background-color: rgba(114, 144, 144, .85);
+		display: block;
+		position: absolute;
+		width: 100%;
+		height:100px;
+		top: 82%;
+		margin-bottom: -200px;
+	}
+
+	.jukebox-controls-prev {
+		display: inline-block;
+		border-radius: 100%;
+		background-color: rgb(36, 88, 96);
+		margin: 10px 5px 5px 5px;
+		width:35px;
+		height:35px;
+		background: url("./images/buttonIcons/prev.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin-left: 27%;
+		float:left;
+
+	}
+
+	.jukebox-controls-play {
+		display: inline-block;
+		border-radius: 100%;
+		margin: 10px 5px 5px 5px;
+		width:35px;
+		height:35px;
+		background: url("./images/buttonIcons/play.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		float:left;
+
+	}
+
+	.jukebox-controls-pause {
+	display: inline-block;
+	border-radius: 100%;
+	margin: 10px 5px 5px 5px;
+	width:35px;
+	height:35px;
+	background: url("./images/buttonIcons/pause.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	float:left;
+	}
+
+	.jukebox-controls-next {
+		display: inline-block;
+		border-radius: 100%;
+		margin: 10px 5px 5px 5px;
+		width:35px;
+		height:35px;
+		background: url("./images/buttonIcons/next.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		float:left;
+	}
+
+	.jukebox-controls-mute{
+		display: inline-block;
+		border-radius: 100%;
+		margin: 10px 5px 5px 5px;
+		width:35px;
+		height:35px;
+		background: url("./images/buttonIcons/mute.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		float:left;
+	}
+
+	.jukebox-controls-shuffle {
+		display: inline-block;
+		border-radius: 100%;
+		margin: 10px 5px 5px 5px;
+		width:35px;
+		height:35px;
+		background: url("./images/buttonIcons/shuffle.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		float:left;
+	}
+
+	.jukebox-controls-repeat {
+		display: inline-block;
+		border-radius: 100%;
+		margin: 10px 5px 5px 5px;
+		width:35px;
+		height:35px;
+		background: url("./images/buttonIcons/repeat.svg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		float:right;
+	}

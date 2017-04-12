@@ -57,6 +57,7 @@ var enterUsername = document.getElementById("inputusername");
 var enterEmail = document.getElementById("inputemail");
 var enterPassword = document.getElementById("inputpassword");
 var form = document.getElementById("form");
+var changeh1header = document.getElementById("assignment4");
 
 function checkPassword() {
 	if (enterPassword.value === "123456768") {
