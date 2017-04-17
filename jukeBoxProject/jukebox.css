@@ -6,26 +6,52 @@
 	}
 
 	body {
-		background: url("./images/pageBG.jpg") center center fixed;
+		background: url("./images/musicplayer3.jpg") center center fixed;
 		background-repeat: no-repeat;
 		background-size: cover;
+		}
 
+	.jukebox-header {
+		background-color: rgba(255, 255, 255, .5);
+		position: relative;
+		top: 0;
+		left:0;
+		width: 100%;
+		height: 55px;
+		margin-bottom: 25px;
+	}
 
+	.jukebox-header-upload {
+		float: right;
+		height: 55px;
+		width: 100px;
+		background-image:url("./images/buttonIcons/upload.svg");
+		background-size: auto 75%;
+		background-position: center;
+		background-repeat: no-repeat;
+		overflow: hidden;
+		text-indent: -999px;
+		cursor: pointer;
 	}
 
 	.jukebox {
 		background-color: rgba(0, 0, 0, 0.5);
 		border: solid 2px #FFF;
-		position: relative;
+		position: absolute;
 		display: block;
 		width: 375px;
 		height: 550px;
-		top: 10%;
+		top:;
 		left: 50%;
 		margin-left: -187.5px;
 		margin-bottom: auto;
 
 
+
+	}
+
+	.jukebox-songs {
+		background-color: rgba(255, 255, 255, .5);
 
 	}
 
@@ -88,6 +114,18 @@
 	float:left;
 	}
 
+	.jukebox-controls-stop {
+	display: inline-block;
+	border-radius: 100%;
+	margin: 10px 5px 5px 5px;
+	width:35px;
+	height:35px;
+	background: url("./images/buttonIcons/stop.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	float:left;
+	}
+
 	.jukebox-controls-next {
 		display: inline-block;
 		border-radius: 100%;
@@ -134,4 +172,11 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		float:right;
+	}
+
+	.jukebox-controls-volume {
+	width: 250px;
+	display: inline-block;
+	margin-left: 15px;
+
 	}
