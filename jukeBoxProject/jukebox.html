@@ -5,6 +5,7 @@
 
 		<link rel="stylesheet" type= "text/css" href= "reset.css"/>
 		<link rel="stylesheet" type= "text/css" href= "jukebox.css"/>
+		<script src= "https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 		<script src= "jQuery.js"></script>
 		<script src= "jukebox.js"></script>
 	</head>
@@ -12,11 +13,20 @@
 
 	<div class = "jukebox-header">
 		<div class = "jukebox-header-logo"></div>
-			<label class = "jukebox-header-upload">
-				Upload
-				<input type="file" accept="audio/*" multiple\>
+			<label class = "jukebox-header-import">
+				Import
+				<input type="file"
+				 			accept="audio/*" multiple/>
 			</label>
-	</div>		
+			<label class = "soundcloud-submit-button">
+				submit
+			</label>
+				<input type="text"
+						class= "soundcloud-submit-field"
+						placeholder="Enter Audio URL Here and Click the Upload Button"
+						/>
+
+	</div>
 
 		<div class = "jukebox">
 			<div class= "jukebox-image"></div>
@@ -37,7 +47,7 @@
 			</div>
 		<div class= "clearfix"></div>
 
-
+</div>
 
 
 

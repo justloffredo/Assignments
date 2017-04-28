@@ -2,10 +2,18 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
 
+	html {
+		height: 100%;
 	}
 
+
+
 	body {
+		min-height: 100%;
+		margin: 0;
+		padding: 0;
 		background: url("./images/musicplayer3.jpg") center center fixed;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -21,7 +29,32 @@
 		margin-bottom: 25px;
 	}
 
-	.jukebox-header-upload {
+	.soundcloud-submit-field {
+		background-color: rgba(255, 255, 255, .15);
+		position: relative;
+		float: left;
+		height: 55px;
+		width: 400px;
+		font-size: 15px;
+
+	}
+
+	.soundcloud-submit-button {
+		position: relative;
+		float: left;
+		height: 55px;
+		width: 100px;
+		background-image:url("./images/buttonIcons/soundcloudupload.svg");
+		background-size: auto 75%;
+		background-position: center;
+		background-repeat: no-repeat;
+		overflow: hidden;
+		text-indent: -999px;
+		cursor: pointer;
+
+	}
+
+	.jukebox-header-import {
 		float: right;
 		height: 55px;
 		width: 100px;
@@ -36,14 +69,14 @@
 
 	.jukebox {
 		background-color: rgba(0, 0, 0, 0.5);
-		border: solid 2px #FFF;
+		border: solid 3px #FFF;
 		position: absolute;
 		display: block;
-		width: 375px;
+		width: 600px;
 		height: 550px;
 		top:;
 		left: 50%;
-		margin-left: -187.5px;
+		margin-left: -300px;
 		margin-bottom: auto;
 
 
@@ -52,7 +85,16 @@
 
 	.jukebox-songs {
 		background-color: rgba(255, 255, 255, .5);
+		color: #FFF;
+		font-size: 15px;
+		}
 
+	.jukebox-songs-song-pic,
+	.jukebox-songs-song-title,
+	.jukebox-songs-song-artist,
+	.jukebox-songs-song-duration {
+		display: inline-block;
+		vertical-align: top;
 	}
 
 	.jukebox-image {
