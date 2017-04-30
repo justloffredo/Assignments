@@ -283,7 +283,7 @@ class SoundCloudSong extends Song {
 			this.meta = {
 				title: song.title,
 				artist: song.user.username,
-				//image: song.artwork_url,
+				image: song.artwork_url,
 				genre: song.genre,
 				songlink: song.permalink_url,
 				userlink: song.user.permalink_url,
