@@ -18,9 +18,6 @@ var jukebox = {
 			pause: $(".jukebox-controls-pause"),
 			stop: $(".jukebox-controls-stop"),
 			next: $(".jukebox-controls-next"),
-			mute: $(".jukebox-controls-mute"),
-			repeat: $(".jukebox-controls-repeat"),
-			myvolume: $(".jukebox-controls-volume"),
 			import: $(".jukebox-header-import input"),
 			input: $(".soundcloud-submit-field"),
 			submit: $(".soundcloud-submit-button"),
@@ -33,21 +30,38 @@ var jukebox = {
 		this.addsong("./songs/Antenna.mp3", {
 			title: "Antenna",
 			artist: "Bonobo",
+			genre: "Electronic",
+			image: "./images/antenna.jpg",
+			userlink: "https://soundcloud.com/bonobo",
+			songlink: "https://soundcloud.com/bonobo/antenna",
 		});
 
 		this.addsong("./songs/Caruba.mp3", {
 			title: "Caruba",
 			artist: "Quantic",
+			genre: "Electronic",
+			image: "./images/curuba.jpg",
+			songlink: "https://soundcloud.com/quantic/curuba",
+			userlink: "https://soundcloud.com/quantic",
+
 		});
 
 		this.addsong("./songs/Emkay(live).mp3", {
 			title: "Emkay(live)",
 			artist: "Bonobo",
+			genre: "Electronic",
+			image:"./images/emkay.jpeg",
+			userlink: "https://soundcloud.com/bonobo",
+			songlink: "https://soundcloud.com/bonobo/emkay-live",
 		});
 
 		this.addsong('./songs/Ten Tigers.mp3', {
 			title: "Ten Tigers",
 			artist: "Bonobo",
+			genre: "Electronic",
+			image: "./images/ten_tigers.jpeg",
+			userlink: "https://soundcloud.com/bonobo",
+			songlink: "https://soundcloud.com/bonobo/ten-tigers",
 		});
 		// Hides the "pause" button
 		$(".jukebox-controls-pause").hide();
@@ -87,10 +101,6 @@ var jukebox = {
 
 		this.dom.next.on("click", function() {
 			this.next();
-		}.bind(this));
-
-		this.dom.myvolume.on("change", function() {
-			this.volumeSetting();
 		}.bind(this));
 
 		this.dom.import.on("change", function() {
@@ -185,11 +195,11 @@ var jukebox = {
 	},
 
 
-// To be worked on..
+/* To be worked on..
 	volumeSetting: function(volumeLevel) {
 		console.log("This is sliding");
 		this.currentSong.volume(this.volumeLevel = this.myvolume.value / 100);
-	},
+	}, */
 
 	addsong: function(file, meta) {
 		// takes new song from our Song class (below)
@@ -207,6 +217,7 @@ var jukebox = {
 		return song;
 	},
 
+
 };
 
 
@@ -222,9 +233,14 @@ class Song {
 	render() {
 		var $song = $('<div class= "jukebox-songs-song"></div>');
 
-		$song.append('<div class= "jukebox-songs-song-title">' + this.meta.title + '</div>');
 		$song.append('<div class= "jukebox-songs-song-artist">' + this.meta.artist + '</div>');
-		$song.append('<img class= "jukebox-songs-song-pic" src =' + this.meta.image + '</>');
+		$song.append('<div class= "jukebox-songs-song-title">' + this.meta.title + '</div>');
+		$song.append('<img class= "jukebox-songs-song-pic" src= ' + this.meta.image + '></img>');
+		$song.append('<div class= "jukebox-songs-song-genre">' + this.meta.genre + '</div>');
+		$song.append('<a class= "jukebox-songs-song-song-link" href=' + this.meta.songlink + ' target="_blank"> Song Link </a>');
+		$song.append('<a class= "jukebox-songs-song-artist-link" href=' + this.meta.userlink + ' target="_blank"> Artist Link </a>');
+
+
 		return $song;
 	}
 
@@ -258,35 +274,27 @@ class FileSong extends Song {
 	}
 }
 
+
 class SoundCloudSong extends Song {
 	constructor(url) {
 		super();
-	// Convert the url to an object with metadata
-
 		SC.resolve(url)
-		// assign that metadata to the song object
 		.then(function(song) {
 			this.meta = {
 				title: song.title,
 				artist: song.user.username,
-				image: song.artwork_url,
+				//image: song.artwork_url,
+				genre: song.genre,
+				songlink: song.permalink_url,
+				userlink: song.user.permalink_url,
 			};
 			return song;
 		}.bind(this))
-		// create an audio instance from the song's uri
 	.then(function(song) {
 		this.audio = new Audio(song.uri + "/stream?client_id=fd4e76fc67798bfa742089ed619084a6");
 	}.bind(this));
 	}
 }
-
-
-
-
-
-
-
-
 $(document).ready(function() {
 	jukebox.start();
 });

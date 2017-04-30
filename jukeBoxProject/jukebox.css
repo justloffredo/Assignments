@@ -2,6 +2,8 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'Fjalla One', sans-serif;
+
 }
 
 	html {
@@ -70,50 +72,85 @@
 	.jukebox {
 		background-color: rgba(0, 0, 0, 0.5);
 		border: solid 3px #FFF;
-		position: absolute;
-		display: block;
-		width: 600px;
-		height: 550px;
-		top:;
+		position: relative;
+		top: 50%;
 		left: 50%;
-		margin-left: -300px;
+		transform: translate(-50%, -50%);
+		display: block;
+		width: 60%;
+		height: 90%;
 		margin-bottom: auto;
 
 
 
 	}
 
-	.jukebox-songs {
-		background-color: rgba(255, 255, 255, .5);
-		color: #FFF;
-		font-size: 15px;
-		}
-
-	.jukebox-songs-song-pic,
-	.jukebox-songs-song-title,
-	.jukebox-songs-song-artist,
-	.jukebox-songs-song-duration {
-		display: inline-block;
-		vertical-align: top;
-	}
-
 	.jukebox-image {
 		background: url("./images/musicplayer-2.jpg");
 		width: 100%;
-		height: 30%;
+		height: 25%;
 		background-repeat: no-repeat;
 		background-size: cover;
 
 	}
 
-	.jukebox-controls {
-		background-color: rgba(114, 144, 144, .85);
-		display: block;
-		position: absolute;
+	.jukebox-songs {
+		display: inline-block;
+		background-color: rgba(255, 255, 255, .5);
+		color: #FFF;
+		font-size: 15px;
 		width: 100%;
-		height:100px;
-		top: 82%;
-		margin-bottom: -200px;
+		height: 65%;
+		padding: 10px;
+		overflow: hidden;
+	}
+
+
+
+.jukebox-songs-song {
+	position: relative;
+	height: 70px;
+	width: 80%;
+	line-height: 15px;
+	margin-bottom: 4px;
+}
+
+
+.jukebox-songs-song-pic,
+.jukebox-songs-song-title,
+.jukebox-songs-song-artist,
+.jukebox-songs-song-genre,
+.jukebox-songs-song-song-link,
+.jukebox-songs-song-artist-link {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+.jukebox-songs-song-artist {
+	font-size: 20px;
+	color: #FFF;
+	margin-right: 10px;
+}
+
+.jukebox-songs-song-title {
+	font-size: 20px;
+	color: #FFF;
+	margin-right: 10px;
+}
+
+.jukebox-songs-song-pic {
+	float: right;
+	width: 65px;
+	height: 65px;
+}
+.jukebox-songs-song-genre {
+
+}
+.jukebox-controls {
+	background-color: rgba(114, 144, 144, .85);
+	position: relative;
+	width: 100%;
+	height: 10%;
 	}
 
 	.jukebox-controls-prev {
@@ -121,13 +158,12 @@
 		border-radius: 100%;
 		background-color: rgb(36, 88, 96);
 		margin: 10px 5px 5px 5px;
-		width:35px;
-		height:35px;
+		width:40px;
+		height:40px;
 		background: url("./images/buttonIcons/prev.svg");
 		background-size: cover;
 		background-repeat: no-repeat;
-		margin-left: 27%;
-		float:left;
+		margin-left: 37%;
 
 	}
 
@@ -135,12 +171,11 @@
 		display: inline-block;
 		border-radius: 100%;
 		margin: 10px 5px 5px 5px;
-		width:35px;
-		height:35px;
+		width:40px;
+		height:40px;
 		background: url("./images/buttonIcons/play.svg");
 		background-size: cover;
 		background-repeat: no-repeat;
-		float:left;
 
 	}
 
@@ -148,77 +183,31 @@
 	display: inline-block;
 	border-radius: 100%;
 	margin: 10px 5px 5px 5px;
-	width:35px;
-	height:35px;
+	width:40px;
+	height:40px;
 	background: url("./images/buttonIcons/pause.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	float:left;
 	}
 
 	.jukebox-controls-stop {
 	display: inline-block;
 	border-radius: 100%;
 	margin: 10px 5px 5px 5px;
-	width:35px;
-	height:35px;
+	width:40px;
+	height:40px;
 	background: url("./images/buttonIcons/stop.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	float:left;
 	}
 
 	.jukebox-controls-next {
 		display: inline-block;
 		border-radius: 100%;
 		margin: 10px 5px 5px 5px;
-		width:35px;
-		height:35px;
+		width:40px;
+		height:40px;
 		background: url("./images/buttonIcons/next.svg");
 		background-size: cover;
 		background-repeat: no-repeat;
-		float:left;
-	}
-
-	.jukebox-controls-mute{
-		display: inline-block;
-		border-radius: 100%;
-		margin: 10px 5px 5px 5px;
-		width:35px;
-		height:35px;
-		background: url("./images/buttonIcons/mute.svg");
-		background-size: cover;
-		background-repeat: no-repeat;
-		float:left;
-	}
-
-	.jukebox-controls-shuffle {
-		display: inline-block;
-		border-radius: 100%;
-		margin: 10px 5px 5px 5px;
-		width:35px;
-		height:35px;
-		background: url("./images/buttonIcons/shuffle.svg");
-		background-size: cover;
-		background-repeat: no-repeat;
-		float:left;
-	}
-
-	.jukebox-controls-repeat {
-		display: inline-block;
-		border-radius: 100%;
-		margin: 10px 5px 5px 5px;
-		width:35px;
-		height:35px;
-		background: url("./images/buttonIcons/repeat.svg");
-		background-size: cover;
-		background-repeat: no-repeat;
-		float:right;
-	}
-
-	.jukebox-controls-volume {
-	width: 250px;
-	display: inline-block;
-	margin-left: 15px;
-
 	}
