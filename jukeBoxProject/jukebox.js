@@ -63,6 +63,9 @@ var jukebox = {
 			userlink: "https://soundcloud.com/bonobo",
 			songlink: "https://soundcloud.com/bonobo/ten-tigers",
 		});
+
+		this.addsong("https://soundcloud.com/viceroymusic/50-cent-disco-inferno-viceroy-jet-life-remix");
+
 		// Hides the "pause" button
 		$(".jukebox-controls-pause").hide();
 
@@ -136,6 +139,8 @@ var jukebox = {
 			this.currentSong.stop();
 		}
 		this.currentSong = song;
+		this.render();
+		return this.currentSong;
 	},
 
 	previous: function() {
@@ -212,6 +217,7 @@ var jukebox = {
 			song = new FileSong(file,meta);
 		}
 
+		var $song = song.render();
 		this.songs.push(song);
 		this.render();
 		return song;
@@ -280,6 +286,7 @@ class SoundCloudSong extends Song {
 		super();
 		SC.resolve(url)
 		.then(function(song) {
+			console.log(song);
 			this.meta = {
 				title: song.title,
 				artist: song.user.username,
@@ -292,6 +299,9 @@ class SoundCloudSong extends Song {
 		}.bind(this))
 	.then(function(song) {
 		this.audio = new Audio(song.uri + "/stream?client_id=fd4e76fc67798bfa742089ed619084a6");
+	}.bind(this))
+	.then(function(song) {
+		this.render;
 	}.bind(this));
 	}
 }

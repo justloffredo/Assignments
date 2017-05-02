@@ -65,7 +65,10 @@ function checkPassword() {
 	}
 	else {
 		return false;
+	}
 }
+function hasNumbers(str) {
+  return !!str.match(/\d+/);
 }
 
 function checkUsername() {
