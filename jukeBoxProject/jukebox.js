@@ -304,6 +304,14 @@ class SoundCloudSong extends Song {
 		this.render;
 	}.bind(this));
 	}
+	render() {
+		this.$song.append('<div class= "jukebox-songs-song-artist">' + this.meta.artist + '</div>');
+		this.$song.append('<div class= "jukebox-songs-song-title">' + this.meta.title + '</div>');
+		this.$song.append('<img class= "jukebox-songs-song-pic" src= ' + this.meta.image + '></img>');
+		this.$song.append('<div class= "jukebox-songs-song-genre">' + this.meta.genre + '</div>');
+		this.$song.append('<a class= "jukebox-songs-song-song-link" href=' + this.meta.songlink + ' target="_blank"> Song Link </a>');
+		this.$song.append('<a class= "jukebox-songs-song-artist-link" href=' + this.meta.userlink + ' target="_blank"> Artist Link </a>');
+	}
 }
 $(document).ready(function() {
 	jukebox.start();

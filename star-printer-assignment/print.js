@@ -1,5 +1,5 @@
 
-var colors = ('colors/safe');
+var colors = require('colors/safe');
 
 var lines = 10;
 
@@ -8,7 +8,7 @@ var print = function(num, symbol) {
 	for (var i = 0; i < num; i++) {
 		output += symbol;
 	}
-	console.log(colors.red(output));
+	console.log(colors.rainbow(output));
 };
 
 module.exports = print;
