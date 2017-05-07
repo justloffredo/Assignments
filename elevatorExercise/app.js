@@ -4,7 +4,7 @@ const Passenger = require("./passenger");
 const elevator = new Elevator();
 let passengers = [new Passenger("Justin", 5), new Passenger("Erin", 4), new Passenger("Brian", 3)];
 let name = Passenger.name;
-let floor = Passenger.floor;
+let floor = Passenger.desiredFloor;
 
 function loadElevator() {
 	elevator.loadPassenger(passengers.pop());
@@ -17,10 +17,10 @@ function unloadElevator() {
 
 elevator.on("up", function(event) {
 	console.log("We're on floor " + event.currentFloor);
-	if (event.currentFloor < elevator.currentPassenger.floor) {
+	if (event.currentFloor < elevator.currentPassenger.desiredFloor) {
 		console.log(elevator.currentPassenger.name + " is moving up.");
 	}
-	if (event.currentFloor === elevator.currentPassenger.floor) {
+	if (event.currentFloor === elevator.currentPassenger.desiredFloor) {
 		console.log("We're at " + elevator.currentPassenger.name + "'s floor!");
 		unloadElevator();
 		elevator.goDown();
@@ -44,7 +44,7 @@ elevator.on("down", function(event) {
 		elevator.goUp();
 	}
 
-	if (passengers.length === 0) {
+	if (passengers.length === 0 && event.currentFloor === 0) {
 		console.log("Elevator is ready");
 	}
 });

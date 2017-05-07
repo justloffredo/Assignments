@@ -1,14 +1,20 @@
 
 var colors = require('colors/safe');
 
-var lines = 10;
+function printStars (starcount) {
+	let stars = "";
 
-var print = function(num, symbol) {
-	var output = '';
-	for (var i = 0; i < num; i++) {
-		output += symbol;
+	for (let i = 0; i < starcount; i++) {
+		stars = stars + " *";
 	}
-	console.log(colors.rainbow(output));
-};
+	console.log(stars);
 
-module.exports = print;
+	if (starcount > 1) {
+		setTimeout(function() {
+			printStars(starcount - 1);
+		}, 1000);
+	}
+}
+
+
+printStars(10);

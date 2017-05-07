@@ -14,7 +14,7 @@ function refill(drinkType, hasIce, cb) {
 		let msg = "Your glass of " + drinkType;
 
 		if(hasIce) {
-			msg+= " with ice";
+			msg += " with ice";
 		}
 
 		msg += " has been refilled";

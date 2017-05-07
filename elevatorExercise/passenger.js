@@ -1,7 +1,7 @@
 class Passenger {
 	constructor(name, floor) {
 		this.name = name;
-		this.floor = floor;
+		this.desiredFloor = floor;
 	}
 }
 
