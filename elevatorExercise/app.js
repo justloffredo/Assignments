@@ -10,30 +10,24 @@ function loadElevator() {
 	elevator.loadPassenger(passengers.pop());
 }
 
-function unLoadElevator() {
-	elevator.unLoadPassenger;
+function unloadElevator() {
+	elevator.unloadPassenger();
 }
-
-
-
-
-
 
 
 elevator.on("up", function(event) {
 	console.log("We're on floor " + event.currentFloor);
 	if (event.currentFloor < elevator.currentPassenger.floor) {
 		console.log(elevator.currentPassenger.name + " is moving up.");
+	}
+	if (event.currentFloor === elevator.currentPassenger.floor) {
+		console.log("We're at " + elevator.currentPassenger.name + "'s floor!");
+		unloadElevator();
+		elevator.goDown();
+	}
 
-		if (event.currentFloor === elevator.currentPassenger.floor) {
-			console.log("We're at your requested floor!");
-			unLoadElevator();
-			elevator.goDown();
-			}
-
-		else {
-			elevator.goUp();
-		}
+	else {
+		elevator.goUp();
 	}
 });
 
@@ -43,18 +37,17 @@ elevator.on("down", function(event) {
 		elevator.goDown();
 	}
 
-	if (passengers.length === 0) {
-		return;
+
+	if (passengers.length > 0 && event.currentFloor === 0) {
+		loadElevator();
+		console.log(elevator.currentPassenger.name + " is now in the elevator.");
+		elevator.goUp();
 	}
 
+	if (passengers.length === 0) {
+		console.log("Elevator is ready");
+	}
 });
 
-
-
-// 	if(passengers.length === 0) {
-// 		console.log("Elevator is ready");
-// 	}
-//
-// });
 loadElevator();
 elevator.goUp();
