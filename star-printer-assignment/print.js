@@ -7,7 +7,7 @@ function printStars (starcount) {
 	for (let i = 0; i < starcount; i++) {
 		stars = stars + " *";
 	}
-	console.log(stars);
+	console.log(colors.red(stars));
 
 	if (starcount > 1) {
 		setTimeout(function() {
@@ -17,4 +17,4 @@ function printStars (starcount) {
 }
 
 
-printStars(10);
+module.exports = printStars;

@@ -1,13 +1,3 @@
-var print = require("./print");
+const printStars = require("./print.js");
 
-
-var lines = 10;
-
-var run = function() {
-	print(lines,' * ');
-	lines = lines - 1;
-	if (lines > 0) {
-		setTimeout(run, 1000);
-	}
-};
-setTimeout(run, 1000);
+printStars(10);
