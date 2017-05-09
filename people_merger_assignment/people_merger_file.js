@@ -18,8 +18,8 @@ console.log(output);
 
 fs.writeFile('./sorted.people.txt', 'output' , 'utf8', (err) => {
 	if (err)
-		throw (err);
-	console.log("Success");});
+		throw (err);});
+
 
 //
 // people1.concat(people2)
