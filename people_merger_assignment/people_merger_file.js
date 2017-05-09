@@ -5,20 +5,20 @@ const people2 = require('./people2.json');
 
 let output = "";
 
-let peopleMerged = people1.concat(people2);
+let peopleMerged = people1.concat(people2).sort();
 
 for (var i = 0; i < peopleMerged.length; i++) {
 	output += peopleMerged[i] + "\n";
 }
 
-console.log(output);
 
 
 
 
-fs.writeFile('./sorted.people.txt', 'output' , 'utf8', (err) => {
-	if (err)
-		throw (err);});
+		fs.writeFile('./sorted_people.txt', output, (err) => {
+		  if (err) throw err;});
+
+
 
 
 //
