@@ -68,11 +68,11 @@ function checkPassword() {
 	}
 }
 function hasNumbers(str) {
-  return !!str.match(/\d+/);
+	return !!str.match(/\d+/);
 }
 
 function checkUsername() {
-	if (enterUsername.value === ([/0-9/])) {
+	if (enterUsername.value(hasNumbers) === true) {
 		return true;
 	}
 	else {

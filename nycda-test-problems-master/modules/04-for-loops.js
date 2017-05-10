@@ -46,15 +46,17 @@ function sumNumbers(inArray) {
 	sumNumbers([2, 4, 6]) -> []
 */
 function onlyOdds(inArray) {
-	let odd = function (num) {
-		return num % 2 !== 0;
-	};
-	let
-	for(i = 0; i < inArray.length - 1; i++) {
+	let odds = [];
+	for (let i = 0; i < inArray.length; i++) {
+		if (inArray[i] % 2) {
+			odds.push(inArray[i]);
+		}
+	}
+return odds;
 
 	}
 
-}
+
 
 
 /*
@@ -76,9 +78,12 @@ function onlyOdds(inArray) {
 	makeRange(7, 5) -> []
 */
 function makeRange(lower, upper) {
-	// ***** ONLY EDIT IN HERE ***** //
+	let newRange = [];
+	for (var i = lower; i <= upper; i++){
+		newRange.push(i);
+	}
+	return newRange;
 }
-
 
 module.exports = {
 	sumNumbers: sumNumbers,
