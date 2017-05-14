@@ -73,6 +73,7 @@ function hasNumbers(str) {
 
 function checkUsername() {
 	if (enterUsername.value(hasNumbers) === true) {
+		alert("Username has numbers!");
 		return true;
 	}
 	else {

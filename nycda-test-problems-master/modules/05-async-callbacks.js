@@ -21,7 +21,9 @@
 	Output: none (just fires callback)
 */
 function runAfter(ms, cb) {
-	// ***** ONLY EDIT IN HERE ***** //
+	setTimeout function() {
+
+	}(2000);
 }
 
 
